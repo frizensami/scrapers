@@ -83,7 +83,7 @@ async function extractGymCapacities(url) {
 
 async function runExtracter() {
   const result = await extractGymCapacities(`${HOST}`)
-  return { statusCode: result.statusCode, body: JSON.stringify(result, null, 2) }
+  return { statusCode: result.statusCode, body: JSON.stringify(result.body, null, 2) }
 }
 
 
