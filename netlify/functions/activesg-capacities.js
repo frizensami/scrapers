@@ -50,7 +50,7 @@ async function extractGymCapacities(url) {
     }
     const timestamp = all_data.timestamp;
     // Format 
-    const human_timestamp = new Date(timestamp).toSOString();
+    const human_timestamp = new Date(timestamp).toString();
 
     const swim = all_data.swimFacilities.map((fac) => {
       if (!fac.hasOwnProperty("name") || !fac.hasOwnProperty("isClosed") || !fac.hasOwnProperty("capacityPercentage")) {
