@@ -49,12 +49,16 @@ async function extractGymCapacities(url) {
       throw new Error("all_data object is missing expected properties: " + JSON.stringify(all_data))
     }
     const timestamp = all_data.timestamp;
+    // Format 
+    const human_timestamp = new Date(unix_timestamp).toSOString();
+
     const swim = all_data.swimFacilities.map((fac) => {
       if (!fac.hasOwnProperty("name") || !fac.hasOwnProperty("isClosed") || !fac.hasOwnProperty("capacityPercentage")) {
         throw new Error("swim object is missing expected properties: " + JSON.stringify(fac))
       }
       return {
         "timestamp": timestamp,
+        "human_timestamp": human_timestamp,
         "name": fac.name,
         "isClosed": fac.isClosed,
         "capacity": fac.capacityPercentage
@@ -66,6 +70,7 @@ async function extractGymCapacities(url) {
       }
       return {
         "timestamp": timestamp,
+        "human_timestamp": human_timestamp,
         "name": fac.name,
         "isClosed": fac.isClosed,
         "capacity": fac.capacityPercentage
