@@ -60,7 +60,7 @@ async function extractGymCapacities(url) {
         "timestamp": timestamp,
         "human_timestamp": human_timestamp,
         "name": fac.name,
-        "isClosed": fac.isClosed,
+        "isClosed": fac.isClosed.toString(),
         "capacity": fac.capacityPercentage
       }
     });
@@ -72,7 +72,7 @@ async function extractGymCapacities(url) {
         "timestamp": timestamp,
         "human_timestamp": human_timestamp,
         "name": fac.name,
-        "isClosed": fac.isClosed,
+        "isClosed": fac.isClosed.toString(),
         "capacity": fac.capacityPercentage
       }
     })
