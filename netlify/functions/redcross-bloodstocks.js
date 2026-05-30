@@ -1,6 +1,6 @@
 const got = require('got')
 const cheerio = require('cheerio')
-const REDCROSS_HOST = "https://www.redcross.sg"
+const REDCROSS_HOST = "https://redcross.sg"
 
 async function extractBloodStocks(url) {
   const response = await got(url);
@@ -38,4 +38,3 @@ async function runExtracter() {
 exports.handler = async function () {
   return await runExtracter();
 }
-
