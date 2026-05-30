@@ -1,6 +1,6 @@
 const got = require('got')
 const cheerio = require('cheerio')
-const REDCROSS_HOST = "https://www.redcross.sg"
+const REDCROSS_HOST = "https://redcross.sg"
 const BLOOD_GROUPS_CLASS_NAMES = [
   {"class_": "a_group", "name": "A"},
   {"class_": "b_group", "name": "B"},
@@ -53,4 +53,3 @@ async function runExtracter() {
 exports.handler = async function () {
   return await runExtracter();
 }
-
